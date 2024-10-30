@@ -4,14 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyecto 2 de IA</title>
+    <title>Proyecto Final</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <header>
-        <h1>Modelos de IA</h1>
-    </header>
+    <h1>Proyecto 2 IA</h1>
+    <h2>Rony Ormandy Ortiz</h2>
 
     <!-- Selector de modelo -->
     <section id="selector-container">
@@ -26,128 +25,132 @@
         </select>
     </section>
 
-    <!-- Contenedor principal de modelos -->
-    <main id="model-container">
-        <!-- Sección de Regresión Lineal -->
-        <section id="linear-regression" class="model-section">
-            <h2>Regresión Lineal</h2>
-            <div class="canvas-container">
-                <canvas id="linear-canvas" width="800" height="400"></canvas>
-            </div>
-            <div class="controls-container">
-                <input type="file" id="linear-file" accept=".csv">
-                <button id="linear-btn-fit" type="button">Fit</button>
-                <button id="linear-btn-predict" type="button" disabled>Predict</button>
-                <button id="linear-btn-mse" type="button" disabled>MSE</button>
-                <button id="linear-btn-r2" type="button" disabled>Coeficiente R2</button>
-            </div>
-            <div class="results-container">
-                <h3>Resultados</h3>
-                <p id="fit-result"></p>
-                <p id="predict-result"></p>
-                <p id="mse-result"></p>
-                <p id="r2-result"></p>
-            </div>
-        </section>
+    <!-- Sección de Regresión Lineal -->
+    <section id="linear-regression" class="model-section">
+        <h2>Regresión Lineal</h2>
+        <div id="canvas-container">
+            <canvas id="linear--canva" width="800" height="400"></canvas>
+        </div>
+        <div id="controls-container">
+            <input type="file" id="linear--file" accept=".csv">
+            <button id="linear--btn-fit" type="button">Fit</button>
+            <button id="linear--btn-predict" type="button" disabled>Predict</button>
+            <button id="linear--btn-mse" type="button" disabled>MSE</button>
+            <button id="linear--btn-r2" type="button" disabled>Coeficiente R2</button>
+        </div>
+        <div id="results-container">
+            <h3>Resultados</h3>
+            <p id="fit-result"></p>
+            <p id="predict-result"></p>
+            <p id="mse-result"></p>
+            <p id="r2-result"></p>
+        </div>
+    </section>
 
-        <!-- Sección de Regresión Polinomial -->
-        <section id="polynomial-regression" class="model-section">
-            <h2>Regresión Polinomial</h2>
-            <div class="canvas-container">
-                <canvas id="polynomial-canvas" width="800" height="400"></canvas>
-            </div>
-            <div class="controls-container">
-                <input type="file" id="polynomial-file" accept=".csv">
-                <input type="number" id="polynomial-degree" placeholder="Grado del polinomio" min="1">
-                <button id="polynomial-btn-fit" type="button">Fit</button>
-                <button id="polynomial-btn-predict" type="button" disabled>Predict</button>
-                <button id="polynomial-btn-mse" type="button" disabled>MSE</button>
-                <button id="polynomial-btn-r2" type="button" disabled>Coeficiente R2</button>
-            </div>
-            <div class="results-container">
-                <h3>Resultados</h3>
-                <p id="poly-fit-result"></p>
-                <p id="poly-predict-result"></p>
-                <p id="poly-mse-result"></p>
-                <p id="poly-r2-result"></p>
-            </div>
-        </section>
+    <!-- Sección de Regresión Polinomial -->
+    <section id="polynomial-regression" class="model-section">
+        <h2>Regresión Polinomial</h2>
+        <div id="canvas-container">
+            <canvas id="polynomial--canva" width="800" height="400"></canvas>
+        </div>
+        <div id="controls-container">
+            <input type="file" id="polynomial--file" accept=".csv">
+            <input type="number" id="polynomial-degree" placeholder="Grado del polinomio" min="1" />
+            <button id="polynomial--btn-fit" type="button">Fit</button>
+            <button id="polynomial--btn-predict" type="button" disabled>Predict</button>
+            <button id="polynomial--btn-mse" type="button" disabled>MSE</button>
+            <button id="polynomial--btn-r2" type="button" disabled>Coeficiente R2</button>
+        </div>
+        <div id="results-container">
+            <h3>Resultados</h3>
+            <p id="poly-fit-result"></p>
+            <p id="poly-predict-result"></p>
+            <p id="poly-mse-result"></p>
+            <p id="poly-r2-result"></p>
+        </div>
+    </section>
 
-        <!-- Sección de Árbol de Decisión ID3 -->
-        <section id="decision-tree" class="model-section">
-            <h2>Árbol de Decisión ID3</h2>
-            <div class="controls-container">
-                <label for="training-file">Cargar archivo CSV de Entrenamiento:</label>
-                <input type="file" id="training-file" accept=".csv">
-                <label for="predict-file">Cargar archivo CSV para Predicción (opcional):</label>
-                <input type="file" id="predict-file" accept=".csv">
-                <button id="btn-generate" type="button">Generar Árbol</button>
-                <button id="btn-predict" type="button" disabled>Predecir</button>
-            </div>
-            <div class="results-container">
-                <h3>Resultados</h3>
-                <p id="prediction"></p>
-            </div>
-            <div id="tree-visualization" class="canvas-container"></div>
-        </section>
+    <!-- Sección de Árbol de Decisión ID3 -->
+    <section id="decision-tree" class="model-section">
+        <h2>Árbol de Decisión ID3</h2>
+        <div id="controls-container">
+            <label for="training-file">Cargar archivo CSV de Entrenamiento:</label>
+            <input type="file" id="training-file" accept=".csv">
+            <label for="predict-file">Cargar archivo CSV para Predicción (opcional):</label>
+            <input type="file" id="predict-file" accept=".csv">
+            <button id="btngenerate" type="button">Generar Árbol</button>
+            <button id="predict" type="button">Predecir</button>
+        </div>
+        <div id="results-container">
+            <h3>Resultados</h3>
+            <p id="prediction"></p>
+        </div>
+        <div id="treed" style="width: 800px; height: 400px; border: 1px solid lightgray;"></div>
+    </section>
 
-        <!-- Sección de Red Neuronal -->
-        <section id="neural-network" class="model-section">
-            <h2>Red Neuronal Basada en CSV</h2>
-            <div class="controls-container">
-                <label for="network-config-file">Cargar configuración de red (CSV):</label>
-                <input type="file" id="network-config-file" accept=".csv">
-                <label for="training-data-file">Cargar datos de entrenamiento (CSV):</label>
-                <input type="file" id="training-data-file" accept=".csv">
-                <label for="prediction-data-file">Cargar datos de predicción (CSV):</label>
-                <input type="file" id="prediction-data-file" accept=".csv">
-                <button id="train-and-predict-btn" type="button">Entrenar y Predecir</button>
-            </div>
-            <div class="results-container">
-                <h3>Resultados de Predicción</h3>
-                <p id="nn-result"></p>
-            </div>
-        </section>
+    <!-- Sección de Red Neuronal -->
+    <section id="neural-network" class="model-section">
+        <h2>Red Neuronal Basada en CSV</h2>
 
-        <!-- Sección de K-Means -->
-        <section id="kmeans-section" class="model-section">
-            <h2>Clustering K-Means</h2>
-            <div class="controls-container">
-                <label for="data-file">Cargar archivo de datos (CSV):</label>
-                <input type="file" id="data-file" accept=".csv">
-                <label for="config-file">Cargar archivo de configuración (CSV):</label>
-                <input type="file" id="config-file" accept=".csv">
-                <button id="btn-execute-kmeans" type="button">Ejecutar Clustering</button>
-            </div>
-            <div class="canvas-container">
-                <canvas id="chart-kmeans"></canvas>
-            </div>
-        </section>
-    </main>
+        <div id="controls-container">
+            <label for="network-config-file">Cargar configuración de red (CSV):</label>
+            <input type="file" id="network-config-file" accept=".csv">
 
-    <!-- Pie de página con datos del autor -->
-    <footer>
-        <p>Autor: Rony Ormandy Ortiz Alvarez</p>
-        <p>Carnet: 201807328</p>
-    </footer>
+            <label for="training-data-file">Cargar datos de entrenamiento (CSV):</label>
+            <input type="file" id="training-data-file" accept=".csv">
 
-    <!-- Scripts -->
+            <label for="prediction-data-file">Cargar datos de predicción (CSV):</label>
+            <input type="file" id="prediction-data-file" accept=".csv">
+
+            <button id="train-and-predict-btn" type="button">Entrenar y Predecir</button>
+        </div>
+
+        <div id="results-container">
+            <h3>Resultados de Predicción</h3>
+            <p id="nnresultado"></p>
+        </div>
+    </section>
+
+    <section id="kmeans-section" class="model-section">
+        <h2>Clustering K-Means</h2>
+
+        <div id="controls-container">
+            <label for="data-file">Cargar archivo de datos (CSV):</label>
+            <input type="file" id="data-file" accept=".csv">
+
+            <label for="config-file">Cargar archivo de configuración (CSV):</label>
+            <input type="file" id="config-file" accept=".csv">
+
+            <button id="btnLineal" type="button">Ejecutar Clustering</button>
+        </div>
+
+        <!-- Contenedor Canvas para Chart.js -->
+        <div style="width: 800px; height: 400px;">
+            <canvas id="chartkmean"></canvas>
+        </div>
+    </section>
+
+
+
+    <!-- Scripts para cada modelo -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.5/dist/chart.umd.min.js"></script>
     <script src="https://unpkg.com/vis-network@9.1.9/dist/vis-network.min.js"></script>
 
-    <!-- Scripts de modelos -->
     <script src="tytusjs/LinearModel.js"></script>
     <script src="scripts/LinearScript.js"></script>
+
     <script src="tytusjs/PolynomialModel.js"></script>
     <script src="scripts/PolynomialScript.js"></script>
+
     <script src="tytusjs/DecisionTreeID3.js"></script>
     <script src="scripts/DecisionTreeScript.js"></script>
+
     <script src="tytusjs/NeuronalNetwork.js"></script>
     <script src="scripts/NeuralNetworkScript.js"></script>
+
     <script src="tytusjs/kmeans.js"></script>
     <script src="scripts/KMeansScript.js"></script>
 
-    <!-- Script del selector -->
     <script src="scripts/SelectorScript.js"></script>
 </body>
 
